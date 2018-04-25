@@ -199,8 +199,8 @@ TEST_IP = 'http://httpbin.org/ip'
 #TEST_HTTP_HEADER = 'http://httpbin.org/get'
 #TEST_HTTPS_HEADER = 'https://httpbin.org/get'
 
-TEST_HTTP_HEADER = 'http://anny3805201314.pixnet.net/blog/post/43970790'
-TEST_HTTPS_HEADER = 'http://anny3805201314.pixnet.net/blog/post/43970790'
+TEST_HTTP_HEADER = 'http://www.newlife101.com.tw/'
+TEST_HTTPS_HEADER = 'http://www.newlife101.com.tw/'
 #CHECK_PROXY变量是为了用户自定义检测代理的函数
 #现在使用检测的网址是httpbin.org,但是即使ip通过了验证和检测
 #也只能说明通过此代理ip可以到达httpbin.org,但是不一定能到达用户爬取的网址
