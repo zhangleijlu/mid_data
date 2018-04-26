@@ -111,6 +111,7 @@ def checkProxy(selfip, proxies):
     types = -1
     speed = -1
     http, http_types, http_speed = _checkHttpProxy(selfip, proxies)
+    print(123, http, http_types, http_speed)
     https, https_types, https_speed = _checkHttpProxy(selfip, proxies, False)
     if http and https:
         protocol = 2
@@ -142,19 +143,22 @@ def _checkHttpProxy(selfip, proxies, isHttp=True):
         start = time.time()
         r = requests.get(url=test_url, headers=config.get_header(), timeout=config.TIMEOUT, proxies=proxies)
         if r.ok:
+            print(789, r.ok)
             speed = round(time.time() - start, 2)
-            content = json.loads(r.text)
-            headers = content['headers']
-            ip = content['origin']
-            proxy_connection = headers.get('Proxy-Connection', None)
-            if ',' in ip:
-                types = 2
-            elif proxy_connection:
-                types = 1
-            else:
-                types = 0
+           # content = json.loads(unicode(r.text, "utf-8"))
+           # print(567)
+           # headers = content['headers']
+           # ip = content['origin']
+           # print(567, ip)
+          #  proxy_connection = headers.get('Proxy-Connection', None)
+          #  if ',' in ip:
+          #      types = 2
+          #  elif proxy_connection:
+          #      types = 1
+          #  else:
+          #      types = 0
 
-            return True, types, speed
+            return True, 2, speed
         else:
             return False, types, speed
     except Exception as e:
